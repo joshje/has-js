@@ -10,38 +10,48 @@ Usage
 
 Add this javascript directly under the opening `<body>` tag. This will ensure the class is added _before_ the content is shown:
 
-	<script>
-		document.body.className+=' has-js';
-		var hasjsrm=setTimeout(function(){document.body.className=document.body.className.replace(' has-js','')},5000);
-	</script>
+```html
+<script>
+document.body.className+=' has-js';
+var hasjsrm=setTimeout(function(){document.body.className=document.body.className.replace(' has-js','')},5000);
+</script>
+```
 
 The first line adds the class "has-js" to the body. The second removes it again after 5 seconds. We will be cancelling this timeout later _if_ there are no errors in our javascript.
 
 At the foot of the page, just before the closing `</html>` tag, link to your javascript file(s) as usual:
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-	<script src="/script.js"></script>
+```html
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="/script.js"></script>
+```
 
 In your final js file (`script.js`), add these lines of code to the bottom of the script:
 
-	clearTimeout(hasjsrm);
-	$('body').addClass('has-js');
+```javascript
+clearTimeout(hasjsrm);
+$('body').addClass('has-js');
+```
 
 This removes the timeout (and adds the class again if it was too late).
 
 If you aren't using jQuery on your page then use this code instead:
 
-	clearTimeout(hasjsrm);
-	document.body.className+=' has-js';
+```javascript
+clearTimeout(hasjsrm);
+document.body.className+=' has-js';
+```
 
 The CSS
 -------
 
 This should be obvious, but hide any fallback elements in your CSS by setting them to `display: none;`:
 
-	.has-js input[type="submit"] {
-		display: none;
-	}
+```css
+.has-js input[type="submit"] {
+	display: none;
+}
+```
 
 Why has-js
 ----------
