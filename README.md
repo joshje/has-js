@@ -1,7 +1,9 @@
 has-js
 ======
 
-One line of javascript to add a class "has-js" to the body. Use it in your CSS to hide fallback elements.
+Adds the class "has-js" to the body to prevent fallback content from showing. Removes this class if an error occurs.
+
+Use this class in your CSS to hide fallback elements.
 
 Usage
 -----
