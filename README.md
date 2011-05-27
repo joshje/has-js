@@ -12,8 +12,8 @@ Add this javascript directly under the opening `<body>` tag. This will ensure th
 
 ```html
 <script>
-document.body.className+=' has-js';
-var hasjsrm=setTimeout(function(){document.body.className=document.body.className.replace(' has-js','')},5000);
+	document.body.className+=' has-js';
+	var hasjsrm=setTimeout(function(){document.body.className=document.body.className.replace(' has-js','')},5000);
 </script>
 ```
 
